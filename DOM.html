@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <div id="firstnode">
+    <ul  class="list" data="valid">
+        <li>First</li>
+        <li>Second</li>
+        <li>THird</li>
+    </ul>
+</div>
+    <table>
+        <tr id="element">
+            <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+        </tr>
+    </table>
+</body>
+<script>
+    // Root Node
+    console.log(document.documentElement)
+    
+    //Element Node
+    console.log(document.body)
+    console.log(document.head)
+    
+    //Children
+    console.log(document.body.childNodes)
+    console.log(document.body.children)
+    console.log(document.body.firstChild)
+    console.log(document.body.lastChild)
+    console.log(document.body.firstElementChild)
+    console.log(document.body.lastElementChild)
+    
+    //using for loop traverse
+    for(node of document.body.children)
+    console.log(node)
+
+    //convert in array
+    const childrensOfBody = Array.from(document.body.children)
+    console.log(childrensOfBody)
+
+   //How check sibilings
+    console.log(document.body.children(0))
+    const UlTag= document.body.children(0)
+    console.log(ulTag.nextElementsibling)
+
+    //Table Dom
+    const TAbleTag= document.body.children(1)
+    console.log(TableTag.tBodies[0].rows)
+    console.log(TableTag.tBodies[0].rows[0].cells)
+    console.log(TableTag.tBodies[0].rows.cells[1].textContent)
+    console.log(TableTag.rows)
+
+    //How to give style prpperty in DoM
+    console.log(TableTag.tBodies[0].rows.cells[1].sytle ="background-color=red;")
+
+    // how to get element using id
+    console.log(element)
+    element.style.background="red"
+
+    //how to sytle element using id
+    const ulTag=document.GetElementByID("element")
+    ulTag.style.backgroundColor="red"
+
+    //how to get element using id
+    listItem=document.getElementsByClassName("listItem")
+    console.log(listItem)
+
+    //Query selector
+    const listItem =document.querySelectorAll('.list-items')
+    console.log(listItems)
+
+    // Query selector to ascess last element
+    const listItem =document.querySelectorAll('ul > li:last-child')
+    console.log(ListItems(0).textContent)
+
+     //Query selector to ascess nth element
+     const ListItems=document.querySelectorAll('ul > li:nth-child(0)')
+    console.log(ListItems(0).textContent)
+
+   //HOw to acesss  user defined attribute
+   console.log(Element.id)
+   console.log(Element.getAttribute('data'))
+   console.log(Element.setAttribute('order-placed','pending'))
+   console.log(Element.setAttribute('order-placed'))
+   console.log(Element.hasAttribute('order-placed')) // check attribute exsist or not
+   console.log(Element.removeAttribute('order-placed'))//remove attribute
+   console.log(Element.attributes)// acess all attribute
+
+//How to create ,remove and updating node to append in DOM
+//add
+const newDiv = document.createElement('div')
+const newtext = document.createTextNode('Hello world')
+newDiv.appendChild(newtext)
+body.append(newDiv)
+body.prepend(newDiv)
+body.before(newDiv)
+body.after(newDiv)
+//replace
+firstnode.replacewith(newdiv)
+remove
+newDiv.remove()
+//add text content
+ newDiv.textContent="Hello world "
+ body.append(newDiv)
+ //add html code
+ const newDiv = document.createElement('div')
+ newDiv.innerHTML=`<table>
+    <tr id="element">
+        <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+    </tr>
+</table>`
+ body.append(newDiv)
+
+// Excerise
+
+// Create element
+// clear element
+
+</script>
+</html>
